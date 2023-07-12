@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div>
+    <h2>Contact book</h2>
+    {% if contacts|length < 1 %}
+    <h4>Your contact book is empty.</h4>
+    {% else %}
+    <table>
+        <tr>
+            <th>contact_name</th>
+            <th>zone_name</th>
+            <th>utc_offset</th>
+            <th>platform</th>
+            <th>comment</th>
+            <th>location</th>
+            <th>current time</th>
+         </tr>
+        {% for contact in contacts %}
+        <tr>
+            <td>{{ contact.contact_name }}</td>
+            <td>{{ contact.zone_name }}</td>
+            <td>{{ contact.utc_offset }}</td>
+            <td>{{ contact.platform }}</td>
+            <td>{{ contact.comment }}</td>
+            <td>{{ contact.location }}</td>
+            <td>{{ contact.contact_time }}</td>
+            <td>
+                <a href="/delete/{{ contact.contact_name }}">Delete</a>
+                <br>
+                <a href="/update/{{ contact.contact_name }}">Update</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <br>
+    <a href="/add">Add contact</a>
+    <br>
+</div>
+
+{% endblock %}

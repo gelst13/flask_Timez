@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="content">
+    <h1>Update contact</h1>
+
+    <div class="form">
+        <form action="/update/{{ contact.contact_name }}" method="POST">
+            <fieldset>
+                <legend>Contact's info:</legend>
+                    <label for="contact_name">Name/nick</label>
+                    <input type="text" id="contact_name" name="contact_name" value="{{contact.contact_name }}"/><br /><br />
+                    <label for="platform">Platform:</label>
+                    <input type="text" id="platform" name="platform" value="{{contact.platform }}"/><br /><br />
+                    <label for="comment">Comment:</label>
+                    <input type="text" id="comment" name="comment" value="{{contact.comment }}"/><br /><br />
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location" value="{{contact.location }}"/><br /><br />
+                    <label for="zone_name">zone name:</label>
+                    <input type="text" id="zone_name" name="zone_name" value="{{contact.zone_name }}"/><br /><br />
+                    <label for="utc_offset">utc-offset like +1):</label>
+                    <input type="text" id="utc_offset" name="utc_offset" value="{{contact.utc_offset }}"/><br /><br />
+                    <input type="submit" value="Submit" />
+            </fieldset>
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}

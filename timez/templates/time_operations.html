@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="time">
+    <h2>Current time in another time zone</h2>
+    Enter the name of time zone or utc-offset:>
+    <div class="time_data_1">
+        <form action="/time_operations" method="POST">
+            <input type="text" name="time_data_1" id="time_data_1">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <h2>Convert time</h2>
+    <h3>-> convert local time to some other time zone</h3>
+    Enter the destination time zone(name or utc-offset) and time
+    in format "EST;00:00" :>
+    <div class="time_data_2">
+        <form action="/time_operations" method="POST">
+            <input type="text" name="time_data_2" id="time_data_2">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <br>
+    <h3><- convert other time zone time to local time</h3>
+    Enter the original time zone (name or utc-offset) and time
+    in format "EST;00:00" :>
+    <div class="time_data_3">
+        <form action="/time_operations" method="POST">
+            <input type="text" name="time_data_3" id="time_data_3">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <br>
+</div>
+
+{% endblock %}

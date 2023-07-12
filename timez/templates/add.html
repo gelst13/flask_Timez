@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset>
+            <legend>Contact's info:</legend>
+            <div>
+                {{ form.contact_name.label() }}
+                    {% if form.contact_name.errors %}
+                        {{ form.contact_name() }}
+                        <div class=errors>
+                            {% for error in form.contact_name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.contact_name() }}
+                    {% endif %}
+            </div>
+            <div>
+                {{ form.platform.label() }}
+
+                    {% if form.platform.errors %}
+                        {{ form.platform() }}
+                        <div class=errors>
+                            {% for error in form.platform.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.platform() }}
+                    {% endif %}
+            </div>
+            <div>
+                {{ form.comment.label() }}
+                {{ form.comment() }}
+            </div>
+            <div>
+                {{ form.location.label() }}
+                {{ form.location() }}
+            </div>
+            <div>
+                {{ form.zone_name.label() }}
+                {{ form.zone_name() }}
+            </div>
+            <div>
+                {{ form.utc_offset.label() }}
+                {{ form.utc_offset() }}
+            </div>
+        </fieldset>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+</div>
+<div>
+    <small>
+        Contact already exists? <a href="{{ url_for('index') }}">See contact book</a>
+    </small>
+</div>
+
+<div class="info">
+    <ul>Timez app recognizes following short names for time zones:
+        <li>{'ART': 'America/Argentina/Buenos_Aires',</li>
+        <li>'CST': 'US/Central',</li>
+        <li>'EST': 'US/Eastern',</li>
+        <li>'IST': 'Asia/Kolkata',</li>
+        <li>'JST': 'Asia/Tokyo',</li>
+        <li>'MSK': 'Europe/Moscow',</li>
+        <li>'PST': 'US/Pacific',</li>
+        <li>'TURKEY': 'Europe/Istanbul',</li>
+        <li>'UTC': 'Etc/UTC'}</li>
+     </ul>
+</div>
+
+{% endblock %}
