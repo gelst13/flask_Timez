@@ -15,3 +15,4 @@ inside jinja2 code in .html template
 PyCharm or whatever got broken, and I couldn't fix the problem, 
 so I created new repo for flask version of TimeZoneReminder app,
 which is now called Timez
+

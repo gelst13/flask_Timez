@@ -5,7 +5,7 @@
     <form method="POST" action="">
         {{ form.hidden_tag() }}
         <fieldset>
-            <legend>Contact's info:</legend>
+            <legend>{{ legend }}:</legend>
             <div>
                 {{ form.contact_name.label() }}
                     {% if form.contact_name.errors %}
@@ -60,7 +60,7 @@
         Contact already exists? <a href="{{ url_for('index') }}">See contact book</a>
     </small>
 </div>
-
+<br>
 <div class="info">
     <ul>Timez app recognizes following short names for time zones:
         <li>{'ART': 'America/Argentina/Buenos_Aires',</li>

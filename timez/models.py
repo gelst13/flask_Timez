@@ -3,7 +3,8 @@ from timez.tzr_utils import TimeKeeper
 
 
 class Contact(db.Model):
-    contact_name = db.Column(db.String(255), primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
+    contact_name = db.Column(db.String(255))
     platform = db.Column(db.String(255), nullable=False)
     comment = db.Column(db.String(255))
     location = db.Column(db.String(255))

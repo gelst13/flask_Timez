@@ -28,9 +28,9 @@
             <td>{{ contact.location }}</td>
             <td>{{ contact.contact_time }}</td>
             <td>
-                <a href="/delete/{{ contact.contact_name }}">Delete</a>
+                <a href="/{{ contact.id }}/delete">Delete</a>
                 <br>
-                <a href="/update/{{ contact.contact_name }}">Update</a>
+                <a href="/{{ contact.id }}/update">Update</a>
             </td>
         </tr>
         {% endfor %}
