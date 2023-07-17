@@ -1,5 +1,5 @@
-from timez import app, db
-from timez.tzr_utils import TimeKeeper
+from timez import db
+from timez.time.utils import TimeKeeper
 
 
 class Contact(db.Model):

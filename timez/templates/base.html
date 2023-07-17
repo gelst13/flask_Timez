@@ -18,17 +18,17 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="{{ url_for('index') }}">Timez</a>
+    <a class="navbar-brand" href="{{ url_for('main.index') }}">Timez</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Contacts</a>
+          <a class="nav-link active" aria-current="page" href="{{ url_for('main.index') }}">Contacts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('time_operations') }}">Time operations</a>
+          <a class="nav-link" href="{{ url_for('time.time_operations') }}">Time operations</a>
         </li>
       </ul>
     </div>
