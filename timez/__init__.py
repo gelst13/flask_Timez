@@ -1,14 +1,11 @@
-import json
 import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
+from timez.config import Config
 
 key = os.urandom(24)
 app = Flask(__name__)
-# app.config.from_object('config.py')
-app.config['SECRET_KEY'] = key
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///timez.db'
+app.config.from_object(Config)
 db = SQLAlchemy(app)
 
 
